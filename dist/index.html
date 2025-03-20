@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style></style>
     <title>Webpack</title>
-</head>
-<body>
+  </head>
+  <body>
+    <link rel="stylesheet" href="index.css" />
     <script src="bundle.js"></script>
-    <div>Hello World</div>
-</body>
-</html>l
+    <div class="loginWrap">
+      <div class="inputBox">
+        <label for="emailInput">Email</label>
+        <input type="email" name="emailInput" />
+      </div>
+      <div class="inputBox">
+        <label for="passwordInput">Password</label>
+        <input type="password" name="passwordInput" />
+      </div>
+      <div class="buttonWrap">
+        <button>로그인</button>
+        <a href="signup.html">
+          <button>회원가입</button>
+        </a>
+      </div>
+    </div>
+    <button id="API">API Check</button>
+  </body>
+</html>

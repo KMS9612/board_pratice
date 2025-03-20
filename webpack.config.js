@@ -23,9 +23,10 @@ module.exports = {
         port: 3000,
         // 실행시 브라우저를 실행시킬건지
         open: true,
-        proxy: {
+        proxy: [{
             // API 서버와의 통신중 CORS에러를 해결하기 위해 프록시 서버 설정
-            '/api': 'http://localhost:5000'
-        }
+            context:['/api'],
+            target:'http://localhost:5000'
+        }]
     }
 }

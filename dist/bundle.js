@@ -16,7 +16,17 @@
   \*****************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_global_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/global.css */ \"./src/client/styles/global.css\");\n/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/index.css */ \"./src/client/styles/index.css\");\n/* harmony import */ var _styles_signup_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/signup.css */ \"./src/client/styles/signup.css\");\n// 파일을 분할해서 작성할 시 이곳에 import해야 번들링이 이루어집니다.\r\n\r\n\r\n\r\n\r\ndocument.addEventListener(\"DOMContentLoaded\", () => {\r\n  const apiTestTarget = document.getElementById(\"API\");\r\n\r\n  console.log(\"apiTestTarget\", apiTestTarget);\r\n\r\n  apiTestTarget.addEventListener(\"click\", async function () {\r\n    try {\r\n      const response = await fetch(\"http://localhost:5000/api\", {\r\n        method: \"GET\",\r\n        headers: {\r\n          \"Contents-Type\": \"application/json\",\r\n        },\r\n      });\r\n      if (!response.ok) {\r\n        throw new Error(\"HTTP error!\");\r\n      }\r\n    } catch (err) {\r\n      console.log(err);\r\n    }\r\n  });\r\n});\r\n\n\n//# sourceURL=webpack://test_board/./src/client/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_global_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/global.css */ \"./src/client/styles/global.css\");\n/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/index.css */ \"./src/client/styles/index.css\");\n/* harmony import */ var _styles_signup_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/signup.css */ \"./src/client/styles/signup.css\");\n/* harmony import */ var _styles_board_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles/board.css */ \"./src/client/styles/board.css\");\n// 파일을 분할해서 작성할 시 이곳에 import해야 번들링이 이루어집니다.\r\n\r\n\r\n\r\n\r\n\r\ndocument.addEventListener(\"DOMContentLoaded\", () => {\r\n  const apiTestTarget = document.getElementById(\"API\");\r\n\r\n  console.log(\"apiTestTarget\", apiTestTarget);\r\n\r\n  apiTestTarget.addEventListener(\"click\", async function () {\r\n    try {\r\n      const response = await fetch(\"http://localhost:5000/api\", {\r\n        method: \"GET\",\r\n        headers: {\r\n          \"Contents-Type\": \"application/json\",\r\n        },\r\n      });\r\n      if (!response.ok) {\r\n        throw new Error(\"HTTP error!\");\r\n      }\r\n    } catch (err) {\r\n      console.log(err);\r\n    }\r\n  });\r\n});\r\n\n\n//# sourceURL=webpack://test_board/./src/client/index.js?");
+
+/***/ }),
+
+/***/ "./src/client/styles/board.css":
+/*!*************************************!*\
+  !*** ./src/client/styles/board.css ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://test_board/./src/client/styles/board.css?");
 
 /***/ }),
 

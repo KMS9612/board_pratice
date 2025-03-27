@@ -2,6 +2,7 @@
 import "./styles/global.css";
 import "./styles/index.css";
 import "./styles/signup.css";
+import "./styles/board.css";
 
 document.addEventListener("DOMContentLoaded", () => {
   const apiTestTarget = document.getElementById("API");

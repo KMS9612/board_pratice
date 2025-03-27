@@ -2,9 +2,24 @@ import path from "path";
 import { fileURLToPath } from "url";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import fs from "fs";
 // __filename 및 __dirname 대체
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+// HTML 파일 검색
+const htmlFiles = fs
+  .readdirSync(path.resolve(__dirname, "src/client"))
+  .filter((file) => file.endsWith(".html"));
+
+// HtmlWebpackPlugin 생성
+const htmlPlugins = htmlFiles.map(
+  (file) =>
+    new HtmlWebpackPlugin({
+      template: `./src/client/${file}`,
+      filename: file, // 동일한 파일명으로 생성
+    })
+);
 
 export default {
   // 진입점
@@ -22,14 +37,7 @@ export default {
   mode: "development",
   // Plugins
   plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/client/index.html",
-      filename: "index.html",
-    }),
-    new HtmlWebpackPlugin({
-      template: "./src/client/signup.html",
-      filename: "signup.html",
-    }),
+    ...htmlPlugins, // 동적으로 생성된 html파일 추가
     new MiniCssExtractPlugin({
       filename: "[name].css",
     }),

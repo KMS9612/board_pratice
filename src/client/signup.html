@@ -8,23 +8,27 @@
   <body>
     <div class="signUpWrap">
       <div class="inputBox">
-        <label for="emailInput">Name</label>
-        <input type="email" name="emailInput" />
+        <label for="userNameInput">Name</label>
+        <input type="text" name="userNameInput" id="userNameInput" />
       </div>
       <div class="inputBox">
         <label for="emailInput">Email</label>
-        <input type="email" name="emailInput" />
+        <input type="email" name="emailInput" id="emailInput" />
       </div>
       <div class="inputBox">
         <label for="passwordInput">Password</label>
-        <input type="password" name="passwordInput" />
+        <input type="password" name="passwordInput" id="passwordInput" />
       </div>
       <div class="inputBox">
         <label for="passwordCheckInput">PasswordCheck</label>
-        <input type="password" name="passwordCheckInput" />
+        <input
+          type="password"
+          name="passwordCheckInput"
+          id="passwordCheckInput"
+        />
       </div>
       <div class="buttonWrap">
-        <button>회원가입</button>
+        <button id="signUpBtn">회원가입</button>
         <a href="index.html">
           <button>취소</button>
         </a>

@@ -3,6 +3,8 @@ import "./styles/global.css";
 import "./styles/index.css";
 import "./styles/signup.css";
 import "./styles/board.css";
+import "./login_page.js";
+import "./signup_page.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const apiTestTarget = document.getElementById("API");
@@ -14,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const response = await fetch("http://localhost:5000/api", {
         method: "GET",
         headers: {
-          "Contents-Type": "application/json",
+          "Content-Type": "application/json",
         },
       });
       if (!response.ok) {

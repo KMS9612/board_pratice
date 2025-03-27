@@ -1,5 +1,7 @@
 import path from "path";
 import { fileURLToPath } from "url";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 // __filename 및 __dirname 대체
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -18,15 +20,38 @@ export default {
   // development는 디버깅
   // production은 최적화된 결과물에 특화
   mode: "development",
+  // Plugins
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/client/index.html",
+      filename: "index.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/client/signup.html",
+      filename: "signup.html",
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+    }),
+  ],
+  module: {
+    rules: [
+      { test: /\.css$/, use: [MiniCssExtractPlugin.loader, "css-loader"] },
+    ],
+  },
   devServer: {
     static: {
       // 참고할 정적파일의 경로
       directory: path.join(__dirname, "dist"),
     },
+    // DevServer에서 변경점을 감지할 파일들
+    watchFiles: ["src/client/**/*", "dist/**/*"],
     // 로컬서버로 사용할 포트
     port: 3000,
     // 실행시 브라우저를 실행시킬건지
     open: true,
+    hot: true,
+    liveReload: true,
     proxy: [
       {
         // API 서버와의 통신중 CORS에러를 해결하기 위해 프록시 서버 설정

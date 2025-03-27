@@ -1,4 +1,7 @@
 // 파일을 분할해서 작성할 시 이곳에 import해야 번들링이 이루어집니다.
+import "./styles/global.css";
+import "./styles/index.css";
+import "./styles/signup.css";
 
 document.addEventListener("DOMContentLoaded", () => {
   const apiTestTarget = document.getElementById("API");

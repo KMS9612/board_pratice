@@ -3,14 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SignUp</title>
-  <script defer src="bundle.js"></script><link href="main.css" rel="stylesheet"></head>
+    <style></style>
+    <title>Boards</title>
+  </head>
   <body>
-    <div class="signUpWrap">
-      <div class="inputBox">
-        <label for="emailInput">Name</label>
-        <input type="email" name="emailInput" />
-      </div>
+    <div class="loginWrap">
       <div class="inputBox">
         <label for="emailInput">Email</label>
         <input type="email" name="emailInput" />
@@ -19,14 +16,13 @@
         <label for="passwordInput">Password</label>
         <input type="password" name="passwordInput" />
       </div>
-      <div class="inputBox">
-        <label for="passwordCheckInput">PasswordCheck</label>
-        <input type="password" name="passwordCheckInput" />
-      </div>
       <div class="buttonWrap">
-        <button>회원가입</button>
-        <button>취소</button>
+        <button>로그인</button>
+        <a href="signup.html">
+          <button>회원가입</button>
+        </a>
       </div>
     </div>
+    <button id="API">API Check</button>
   </body>
 </html>

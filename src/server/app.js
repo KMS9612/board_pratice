@@ -3,6 +3,7 @@ import path from "path";
 import userRouter from "./userRoute.js";
 import { fileURLToPath } from "url";
 import cors from "cors";
+import db from "./db.js";
 
 const app = express();
 const PORT = 5000;
@@ -37,6 +38,15 @@ app.use("/user", userRouter);
 // API Check
 app.get("/api", (req, res) => {
   res.json({ message: "Hello Express" });
+});
+
+// DB Connect Check
+db.connect((err) => {
+  if (err) {
+    console.error("데이터베이스 연결에 실패했습니다.", err.stack);
+    return;
+  }
+  console.log("데이터베이스 연결에 성공헸습니다.");
 });
 
 app.listen(PORT, () => {

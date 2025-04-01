@@ -1,9 +1,9 @@
 import express from "express";
 import path from "path";
-import userRouter from "./userRoute.js";
 import { fileURLToPath } from "url";
 import cors from "cors";
 import db from "./db.js";
+import userRouter from "./router/userRoute.js";
 
 const app = express();
 const PORT = 5000;

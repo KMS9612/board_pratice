@@ -34,7 +34,7 @@ export default {
   // development와 production 중 택1
   // development는 디버깅
   // production은 최적화된 결과물에 특화
-  mode: "development",
+  mode: "production",
   // Plugins
   plugins: [
     ...htmlPlugins, // 동적으로 생성된 html파일 추가

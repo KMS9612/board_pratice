@@ -2,7 +2,7 @@ const signUpLogic = async (inputTargets) => {
   if (!checkSignUpInputs(inputTargets)) {
     return;
   }
-  const { userName, email, password, passwordCheck } = inputTargets;
+  const { userName, email, password } = inputTargets;
 
   try {
     const response = await fetch("http://localhost:5000/user/createUser", {
@@ -17,10 +17,17 @@ const signUpLogic = async (inputTargets) => {
       }),
     });
 
-    console.log(response);
     if (!response.ok) {
-      throw new Error("Error");
+      if (response.status === 500) {
+        alert("서버에러 발생");
+      }
+
+      return;
     }
+
+    console.log(response);
+    alert("회원가입완료! 환영합니다!");
+    window.location.href = "/index.html";
     return;
   } catch (err) {
     console.log(err);

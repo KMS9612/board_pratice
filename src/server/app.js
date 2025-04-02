@@ -41,13 +41,15 @@ app.get("/api", (req, res) => {
 });
 
 // DB Connect Check
-db.connect((err) => {
-  if (err) {
-    console.error("데이터베이스 연결에 실패했습니다.", err.stack);
-    return;
+(async () => {
+  try {
+    const connection = await db.getConnection();
+    console.log("데이터베이스 연결에 성공했습니다.");
+    connection.release(); // 풀에 연결 반환
+  } catch (err) {
+    console.error("데이터베이스 연결에 실패했습니다:", err);
   }
-  console.log("데이터베이스 연결에 성공헸습니다.");
-});
+})();
 
 app.listen(PORT, () => {
   console.log(`${PORT}번 포트에서 서버 작동중...`);
